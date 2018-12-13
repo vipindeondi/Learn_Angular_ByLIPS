@@ -1,0 +1,23 @@
+<h1>
+   Here is booklist Details.!
+</h1>
+
+
+<table class="table table-sm" border="2"  >
+  <thead>
+    <th>BOOK_Id</th>
+    <th>BOOK_Name</th>
+    <th>BOOK_Author</th>
+    <th>SelectRecord </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let B of booklist">
+      <td>{{B.bookid}}</td>
+      <td [innerText]="B.bookname"></td>
+      <td>{{B.authorname}}</td>
+      <td><button class="btn btn-primary " (click)="selectBook(B)">SendToData_Book-Component</button></td>
+      
+    </tr>
+  </tbody>
+</table>
+

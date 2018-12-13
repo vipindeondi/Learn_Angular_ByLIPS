@@ -1,0 +1,42 @@
+<p>
+  book-component works!
+</p>
+<h1>Hi I am create a new  book component.</h1>
+
+<!-- <div>
+  id:{{book.bookid}}
+ Name:{{book.bookname}}
+ Author:{{book.authorname}}
+ PublishDate:{{book.pulishdate}}
+ Rating:{{book.rating}}
+</div> -->
+
+<h4>Json format.=> {{book | json}}</h4>
+<hr>
+<h1> 1.Book Information Details..</h1>
+<table class="table" class="danger"  border="3"  >
+  <thead>
+    <th>BOOK_Id</th>
+    <th>BOOK_Name</th>
+    <th>BOOK_Author</th>
+    <th>BOOK_PublishDate</th>
+    <th>BOOK_Rating</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let B of booklist" >
+      <td>{{B.bookid}}</td>
+      <td [innerText]="B.bookname"></td>
+      <td>{{B.authorname}}</td>
+      <td>{{B.pulishdate}}</td>
+      <td>{{B.rating}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<app-booklist-component [booklist]="booklist"  (sendToParent)="receiveFromChild($event)"> </app-booklist-component>
+
+
+
+
+
+

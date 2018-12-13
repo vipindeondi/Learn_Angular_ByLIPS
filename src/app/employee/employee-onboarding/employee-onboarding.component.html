@@ -1,0 +1,85 @@
+<p>
+  employee-onboarding works!
+
+</p>
+<h1>
+Onboarding Form...Reactive-Form Create
+</h1>
+{{onboardingForm.invalid}}
+{{onboardingForm.valid}}
+{{onboardingForm.pristen}}
+{{onboardingForm.dirty}}
+{{onboardingForm.value|json}}
+
+<!-- This is Reactive Driven Form Which is use in Angular FrameWork. -->
+
+<form [formGroup]="onboardingForm" novalidate>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="firstName" placeholder="First Name">
+  </div>
+  <div>
+    {{onboardingForm.get('firstName').errors|json}}
+  </div>
+
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="lastName" placeholder="last Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="email" placeholder=" email">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="date" formControlName="dob" placeholder="Date of Birth">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addressLine1" name="addr1" placeholder="Address Line1">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="addressLine2" name="addr2" placeholder="Address Line2">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="city" name="city" placeholder="City">
+    </div>
+    <div class="form-group">
+      <input class="form-control" type="text" formControlName="pin" name="pin" placeholder="pin">
+    </div>
+    <div>
+        {{onboardingForm.get('address.pin').errors|json}}
+      </div>
+    <div class="form-group">
+      <button [disabled]="onboardingForm.invalid" type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+<!-- it is dynamically add  and delete controls. -->
+  <div class="form-group">
+    <button type="button" class="btn btn-success" (click)="addEmployer()">Add New Employer</button>
+  </div>
+  <div class="form-group" formArrayName="experience"> 
+    <div class="form-group" *ngFor="let exp of onboardingForm['controls'].experience['controls'];let i=index">
+      <div class="form-group" [formGroupName]="i">
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="employer" name="employer" placeholder="Previous Employer">
+        </div>
+        <div>
+            {{onboardingForm.get(["experience",i,"employer"]).errors|json}}
+          </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="startDate" name="sdate" placeholder="Start Date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="date" formControlName="endDate" name="Edate" placeholder="End Date">
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="text" formControlName="position" name="position" placeholder="Position">
+        </div>
+        <div  *ngIf="i>0" class="form-control">
+          <button type="button" class="btn btn-danger" (click)="removeEmployer(i)">Remove Employer</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</form>

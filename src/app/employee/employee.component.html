@@ -1,0 +1,35 @@
+<!-- <div [hidden]="hidden">
+  <h1>
+    Name : {{name}}
+  </h1>
+</div>
+
+
+<div [hidden]="hidden" [innerText]="name">
+</div> -->
+
+<app-employee-onboarding></app-employee-onboarding>
+<hr>
+<div *ngIf="hidden">
+  <h1>
+    Name : {{name}}
+  </h1>
+</div>
+
+
+<div *ngIf="hidden" [innerText]="name">
+</div>
+
+{{hidden}}
+
+<button class="btn btn-success" (click)="toggle()">Toggle</button>
+
+<div>
+  ID: {{employee.id}}
+  Name: {{employee.name}}
+  Address: {{employee.address}}
+</div>
+
+<button class="btn btn-primary" (click)="addEmployee()">Add New Employee</button>
+<!-- {{empList | json}} -->
+<app-employee-list [employeeList]="empList" [title]="'Employee List'" (sendToParent)="receiveFromChild($event)"></app-employee-list>

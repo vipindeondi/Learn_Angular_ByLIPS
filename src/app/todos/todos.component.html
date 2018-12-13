@@ -1,0 +1,23 @@
+
+
+<app-todo-add-new></app-todo-add-new>
+
+<hr>
+<h1>ToDos</h1>
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>User_ID</th>
+    <th>Title</th>
+    <th>Completed</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.userId}}</td>
+      <td>{{todo.title}}</td>
+      <td>{{todo.completed}}</td>
+
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,32 @@
+
+
+<h1>
+  Add_New_todosList
+</h1>
+
+
+<form #postForm="ngForm" (submit)="addNewtodos() ;postForm.reset()" novalidate>
+  <div class="from-group">
+    <div>
+    <input #number="ngModel" type="number" required [(ngModel)]="todos.userId" name="userId" class="form-control"
+      placeholder="User Id">
+    </div>
+    <div *ngIf="number.invalid" class="row">
+        <!-- {{number.valid | json }}
+        {{number.invalid | json }}
+        {{number.pristine | json }}
+        {{number.dirty | json }} -->
+        <span class="alert alert-danger">Please provide UserID</span>
+      </div>
+  </div>
+  <div class="form-group">
+    <input type="text" required [(ngModel)]="todos.title" name="title" class="form-control" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <input type="text" required [(ngModel)]="todos.completed" name="completed" class="form-control" placeholder="completed">
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="postForm.invalid" class="btn btn-success">AddNew_Todo</button>
+  </div>
+
+</form>
