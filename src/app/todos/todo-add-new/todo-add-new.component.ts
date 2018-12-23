@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Itodos} from '../service/Itodos';
 import {TodosService} from '../service/todos.service';
+
 import { from } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-todo-add-new',
@@ -16,10 +18,20 @@ export class TodoAddNewComponent implements OnInit {
     title: '',
     userId: 0
   };
-
-  constructor(private todoservice:TodosService) { }
+  id: number = 0;
+  constructor(private todoservice:TodosService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((data) => {
+      this.id = + data.get('id');
+      if (this.id > 0) {
+        this.todoservice.getTODOSById(this.id).subscribe(
+          (response) => {
+            this.todos = response;
+          })
+      }
+    });
   }
 
   addNewtodos(){

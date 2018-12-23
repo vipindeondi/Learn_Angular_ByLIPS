@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LoginService }from './logincomponent/service/login.service';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +14,7 @@ export class AppComponent {
 
   role: string = 'Super-User';
 
+  constructor(public loginservice:LoginService){
+
+  }
 }

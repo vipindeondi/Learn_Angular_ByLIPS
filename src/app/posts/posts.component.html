@@ -1,6 +1,11 @@
 <h1>
   Posts
 </h1>
-<app-post-add></app-post-add>
+
+ <!-- add this for display contain same page. -->
+<router-outlet></router-outlet> 
+
+<!-- <app-post-add></app-post-add> -->
 <hr>
+<!-- {{posts |json}} -->
 <app-posts-list [postLists]="posts"></app-posts-list>

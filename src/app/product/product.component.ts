@@ -61,7 +61,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   }
   ngOnDestroy() {
     if (this.Subscription != null) {
-      this.Subscription.Unsubscribe();
+      this.Subscription.unsubscribe();
     }
 
   }

@@ -8,7 +8,7 @@
 <div [hidden]="hidden" [innerText]="name">
 </div> -->
 
-<app-employee-onboarding></app-employee-onboarding>
+<!-- <app-employee-onboarding></app-employee-onboarding> -->
 <hr>
 <div *ngIf="hidden">
   <h1>
@@ -19,6 +19,12 @@
 
 <div *ngIf="hidden" [innerText]="name">
 </div>
+
+
+<button type="button" routerLink="/employee/new" class="btn btn-success">
+  Add New Employee
+</button>
+
 
 {{hidden}}
 

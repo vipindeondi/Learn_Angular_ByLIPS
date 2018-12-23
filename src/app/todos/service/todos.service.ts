@@ -17,4 +17,8 @@ export class TodosService {
     return this.http.post<Itodos>('https://jsonplaceholder.typicode.com/todos', todo);
 
   }
+  getTODOSById(id:number)
+  {
+    return this.http.get<Itodos>('https://jsonplaceholder.typicode.com/todos/' +id);
+  }
 }

@@ -10,7 +10,7 @@ import { from } from 'rxjs';
 })
 export class EmployeeOnboardingComponent implements OnInit {
 
-  onboardingForm: FormGroup;  //use this varriable for hold varribles.
+  onboardingForm: FormGroup;  //use this varriable for hold another control fields varribles.
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -19,6 +19,7 @@ export class EmployeeOnboardingComponent implements OnInit {
       lastName: new FormControl(''),
       email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]),
       dob: new FormControl(''),
+      
       address: this.fb.group({
         addressLine1: new FormControl(''),
         addressLine2: new FormControl(''),
