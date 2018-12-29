@@ -12,9 +12,9 @@ import { from } from 'rxjs';
 export class AppComponent {
   title = 'HotelManagementApp-V7';
 
-  role: string = 'Super-User';
+  role = 'Super-User';
 
-  constructor(public loginservice:LoginService){
+  constructor(public loginservice: LoginService) {
 
   }
 }

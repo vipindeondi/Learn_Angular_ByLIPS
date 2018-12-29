@@ -8,9 +8,9 @@
 {{postForm.dirty | json }}
 <!-- {{posts | json}} -->
 <form #postForm="ngForm" (submit)="addPost();postForm.reset()" novalidate>
-  <div class="form-group">
+  <mat-form-field>
     <div>
-      <input #number="ngModel" type="number" required [(ngModel)]="posts.userId" name="userId" class="form-control"
+      <input matInput #number="ngModel" type="number" required [(ngModel)]="posts.userId" name="userId" 
         placeholder="User Id">
     </div>
     <div *ngIf="number.invalid" class="row">
@@ -20,19 +20,19 @@
           {{number.dirty | json }} -->
       <span class="alert alert-danger">Please provide UserID</span>
     </div>
-  </div>
-  <div class="form-group">
-    <input type="text" required [(ngModel)]="posts.title" name="title" class="form-control" placeholder="Title">
-  </div>
-  <div class="form-group">
-    <input type="text" required [(ngModel)]="posts.body" name="body" class="form-control" placeholder="Body">
-  </div>
-  
-  <div *ngIf="posts.id===0" class="form-group">
-    <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Add-Post</button>
-  </div>
-  <div *ngIf="posts.id>0" class="form-group">
-    <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Update-Post</button>
-  </div>
+  </mat-form-field>
+  <mat-form-field>
+    <input type="text" matInput required [(ngModel)]="posts.title" name="title"  placeholder="Title">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput required [(ngModel)]="posts.body" name="body"  placeholder="Body">
+    </mat-form-field>
+
+    <div *ngIf="posts.id===0" class="form-group">
+      <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Add-Post</button>
+    </div>
+    <div *ngIf="posts.id>0" class="form-group">
+      <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Update-Post</button>
+    </div>
 
 </form>

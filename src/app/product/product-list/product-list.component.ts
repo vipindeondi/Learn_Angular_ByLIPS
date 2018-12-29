@@ -1,4 +1,4 @@
-import { Component, OnInit ,Self} from '@angular/core';
+import { Component, OnInit , Self} from '@angular/core';
 import { IProduct } from '../services/IProducts';
 import { ProductService } from '../services/product.service';
 
@@ -6,12 +6,12 @@ import { ProductService } from '../services/product.service';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
-  
+
 })
 export class ProductListComponent implements OnInit {
 
-  productList : IProduct[] = [];
-  
+  productList: IProduct[] = [];
+
   ngOnInit() {
   }
 

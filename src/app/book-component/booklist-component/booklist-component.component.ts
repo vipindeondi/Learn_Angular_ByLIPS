@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit , Input, Output, EventEmitter} from '@angular/core';
 import { IBook } from '../IBook';
 
 @Component({
@@ -15,7 +15,7 @@ export class BooklistComponentComponent implements OnInit {
   }
 
 
-  selectBook(B:IBook){
+  selectBook(B: IBook) {
     console.log(B);
     this.sendToParent.emit(B);
 

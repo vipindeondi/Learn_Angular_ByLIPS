@@ -7,7 +7,7 @@ import { DepartmentComponent } from '../department/department.component';
 })
 export class ContainerComponent implements OnInit, AfterContentInit {
 
-  @ContentChild(DepartmentComponent) deptComponent : DepartmentComponent;
+  @ContentChild(DepartmentComponent) deptComponent: DepartmentComponent;
 
   constructor() { }
 

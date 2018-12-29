@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
 
   ngOnInit() {
     console.log('OnInit is called');
-    //this.productList = this.productService.getProduct();
+    // this.productList = this.productService.getProduct();
 
     this.Subscription = this.productService.getProduct().subscribe((data) => {
       this.productList = data;
@@ -55,9 +55,9 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
       (component) => {
         setTimeout(() => {
           component.productList = this.productList;
-        }, 0)
+        }, 0);
       }
-    )
+    );
   }
   ngOnDestroy() {
     if (this.Subscription != null) {

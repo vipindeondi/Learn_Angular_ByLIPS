@@ -8,17 +8,16 @@ import { from } from 'rxjs';
 })
 export class TodosService {
 
-  constructor(private http:HttpClient) { }
-  getpost(){
+  constructor(private http: HttpClient) { }
+  getpost() {
     return this.http.get<Itodos[]>('https://jsonplaceholder.typicode.com/todos');
 
   }
-  addNewtodos(todo:Itodos){
+  addNewtodos(todo: Itodos) {
     return this.http.post<Itodos>('https://jsonplaceholder.typicode.com/todos', todo);
 
   }
-  getTODOSById(id:number)
-  {
-    return this.http.get<Itodos>('https://jsonplaceholder.typicode.com/todos/' +id);
+  getTODOSById(id: number) {
+    return this.http.get<Itodos>('https://jsonplaceholder.typicode.com/todos/' + id);
   }
 }

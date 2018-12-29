@@ -5,12 +5,14 @@ import { PostsListComponent } from './posts-list/posts-list.component';
 import { PostAddComponent } from './post-add/post-add.component';
 import { FormsModule } from '@angular/forms';
 import { PostsRoutingModule } from './posts-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
+    // CommonModule,
+    // FormsModule,
+    SharedModule,
      PostsRoutingModule
   ],
   declarations: [

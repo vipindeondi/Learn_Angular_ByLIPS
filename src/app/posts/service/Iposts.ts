@@ -1,7 +1,7 @@
-export interface Iposts{
-    userId:Number;
+export interface Iposts {
+    userId: Number;
     id: Number;
-    title:string;
+    title: string;
     body: string;
 
 }

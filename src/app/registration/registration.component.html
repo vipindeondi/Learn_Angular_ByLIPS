@@ -1,0 +1,27 @@
+<p>
+  registration works!
+</p>
+<h1>New User</h1>
+
+<form novalidate>
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="user.firstName" name="firstname" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="user.lastName" name="lastname" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+    <input appEmailvalidation #userEmail="ngModel" class="form-control" type="email" [(ngModel)]="user.email" name="email"
+      placeholder="email">
+      {{userEmail.errors | json}}
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="datetime" [(ngModel)]="user.dob" name="dob" placeholder="Date of Birth">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" [(ngModel)]="user.city" name="city" placeholder="city">
+  </div>
+  <div class="form-group">
+    <button type="submit" mat-raised-button color="primary">Register</button>
+  </div>
+</form>

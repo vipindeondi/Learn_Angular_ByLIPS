@@ -1,7 +1,7 @@
-export interface Itodos{
-    userId:Number;
+export interface Itodos {
+    userId: Number;
     id: Number;
-    title:string;
+    title: string;
     completed: string;
 
 }

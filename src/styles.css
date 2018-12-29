@@ -7,12 +7,21 @@
     color: white;
 } 
 
-.ng-valid[required],
+/* .ng-valid[required],
 .ng-valid.required {
     border-left: 5px solid #42A948;
-    /* green */
+     green 
 }
 .ng-invalid:not(form) {
     border-left: 5px solid #a94442;
-    /* red */
+     red 
+} */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-form-field{
+    width: 100%;
+}
+input{
+    width: 100%;
 }

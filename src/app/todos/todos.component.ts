@@ -10,14 +10,14 @@ import { PostsService } from '../posts/service/posts.service';
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
-  todos:Itodos[];
+  todos: Itodos[];
 
-  constructor(private todosservice:TodosService) { }
+  constructor(private todosservice: TodosService) { }
 
   ngOnInit() {
-    this.todosservice.getpost().subscribe((data)=>this.todos=data,
-    (err)=>console.log('err'));
- 
+    this.todosservice.getpost().subscribe((data) => this.todos = data,
+    (err) => console.log('err'));
+
   }
 
 }

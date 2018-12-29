@@ -28,6 +28,15 @@ import { EmployeeModule } from './employee/employee.module';
 // import { PostsModule } from './posts/posts.module';
 
 import { LogincomponentComponent } from './logincomponent/logincomponent.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { UserPipe } from './custom/user.pipe';
+import { RegistrationComponent } from './registration/registration.component';
+import { EmailvalidationDirective } from './custom/directive/emailvalidation.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+//import { HoverDirective } from './custom/directive/hover.directive';
+//import { SalaryPipe } from './custom/salary.pipe';
 
 
 @NgModule({
@@ -48,18 +57,31 @@ import { LogincomponentComponent } from './logincomponent/logincomponent.compone
 
     NotfoundComponent,
 
-    LogincomponentComponent
+    LogincomponentComponent,
+
+    UserPipe,
+
+    RegistrationComponent,
+
+    EmailvalidationDirective,
+
+   
+
+    
   ],
   imports: [
     BrowserModule,
 
     HttpClientModule, //add this module.
-    FormsModule, //add this for plane Template html forms.
-    ReactiveFormsModule, //add this for Reactive Driven forms.
-     EmployeeModule,
-     // PostsModule,     for use lazy loading dont use this
+    // FormsModule, //add this for plane Template html forms.
+    //ReactiveFormsModule, //add this for Reactive Driven forms.
+    SharedModule,
+    EmployeeModule,
+    // PostsModule,     for use lazy loading dont use this
     // TodosModule,
-     AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   // providers: [ProductService],
   providers: [{ provide: ProductService, useClass: ProductService },

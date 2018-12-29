@@ -11,7 +11,9 @@ export class EmployeeListComponent implements OnInit, OnChanges {
   @Input() employeeList: IEmployee;
   @Input() title: string;
   @Output() sendToParent: EventEmitter<IEmployee> = new EventEmitter<IEmployee>();
-
+ 
+  amount:number=0; //Declare the varriable for  customPipe
+  
   constructor() { }
   
 //  Onchanges Uses for child component to parent component relation without use input event..

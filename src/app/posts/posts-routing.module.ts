@@ -9,6 +9,8 @@ const routes: Routes = [
   {
     // path: 'posts', component: PostsComponent,
     path: '', component: PostsComponent, //its for using lazy loading concept
+    resolve:                                     // resolve gaurd. it is using for 
+    {postList: PostAddGuard},
     canActivateChild: [PostAddGuard],
     children: [
       { path: ':id', component: PostAddComponent }

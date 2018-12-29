@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 export class CustominterceptorService implements HttpInterceptor {
 
   constructor() { }
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     console.log(req);
-    
-    if(req.method==='GET'){
+
+    if(req.method==='GET') {
       console.log(req);
       let request =req.clone({headers: new HttpHeaders().set('apikey','dehgkghk')});
       console.log(request);

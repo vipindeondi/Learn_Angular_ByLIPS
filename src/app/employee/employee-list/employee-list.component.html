@@ -1,4 +1,8 @@
 <h1>{{title}}</h1>
+<div class="form-group">
+  <input type="number" [(ngModel)]="amount" placeholder="Salary" name="salary">
+</div>
+
 <table class="table">
   <thead>
     <th>
@@ -10,15 +14,19 @@
     <th>
       Address
     </th>
+    <th>DOB</th>
+    <th>Salary</th>
     <th>
       Select Record
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employeeList">
-      <td>{{employee.id}}</td>
-      <td [innerText]="employee.name"></td>
-      <td>{{employee.address}}</td>
+    <tr [appHover]="'red'" *ngFor="let employee of employeeList |salary:amount">
+      <td>{{employee.id|percent}}</td>
+      <td [innerText]="employee.name|uppercase"></td>
+      <td>{{employee.address|lowercase}}</td>
+      <td>{{employee.dob|date:'dd-MMM-yyyy'}}</td>
+      <td>{{employee.salary| currency:'INR'}}</td>
       <td><button class="btn btn-success" (click)="selectEmployee(employee)">Send To Parent</button></td>
     </tr>
   </tbody>

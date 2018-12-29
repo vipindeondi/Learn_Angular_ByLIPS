@@ -21,10 +21,13 @@
       <a class="nav-link" routerLink="todos">TODOS</a>
     </li>
     
-    
-    
   </ul>
+  <div *ngIf="loginservice.isLoggedin">
+  Hallo {{loginservice.currentuser|user}}
+  </div>
 </nav>
+
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <!-- 
