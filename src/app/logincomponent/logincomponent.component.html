@@ -2,10 +2,12 @@
 <h1>
   {{title}}
 </h1>
-<lib-list [headers]="headers"></lib-list>
+<!-- //add the lib-list for this library wich is custom made library. -->
+<lib-list [headers]="headers"></lib-list> 
+
 <form #loginForm="ngForm" novalidate (submit)="login()">
   <mat-form-field>
-    <input matInput required type="text" [(ngModel)]="user.username" name="username" placeholder="username">
+    <input matInput required type="text" [(ngModel)]="user.email" name="username" placeholder="username">
   </mat-form-field>
   <mat-form-field>
     <input matInput required type="password" [(ngModel)]="user.password" name="username" placeholder="password">

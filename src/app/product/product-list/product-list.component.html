@@ -1,4 +1,27 @@
 <h1>
-  Product List
+ {{productCount}}  Product Available
 </h1>
-{{productList | json}}
+<!-- {{productList | json}} -->
+
+<table class="table">
+<tr>
+  <th>Id</th>
+  <th>Product_Name</th>
+  <th>price</th>
+  <th>Manufacturing Date</th>
+  <th>Details</th>
+  <th>Delete</th>
+</tr>
+<tr @rowsAnimation *ngFor="let product of productList">
+  <td>{{product._id}}</td>
+  <td>{{product.name}}</td>
+  <td>{{product.price}}</td>
+  <td>{{product.mfd}}</td>
+  <td>
+    <button [routerLink]="[product._id]" mat-raised-button color="primary">Details</button>
+  </td>
+  <td>
+    <button (click)="delete(product._id)" mat-raised-button color="primary">Delete</button>
+  </td>
+</tr>
+</table>

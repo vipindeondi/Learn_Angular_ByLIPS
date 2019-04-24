@@ -1,9 +1,34 @@
 <h1>
-  Product
+ Add Product
 </h1>
-<app-product-list></app-product-list>
+
+<form [formGroup]="productForm" (submit)="addProduct()" novalidate>
+    <mat-form-field>
+      <input matInput  type="text" formControlName="name" 
+      name="name" placeholder="Product Name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput  type="number" formControlName="price" 
+    name="price" placeholder="Price">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput  type="date" formControlName="mfd" 
+    name="mfd" placeholder="Manufacturing Date">
+  </mat-form-field>
+  <div>
+    <button [disabled]="productForm.invalid" type="submit" 
+      mat-raised-button color="primary">Add Product</button>
+  </div>
+  </form>
+
+  <app-product-list (deleteProduct)="deleteProd($event)"></app-product-list>
+
+
+
+<!-- <app-product-list></app-product-list>
 <app-product-list></app-product-list>
 <app-product-list></app-product-list>
 <div #productName>
 
-</div>
+</div> -->

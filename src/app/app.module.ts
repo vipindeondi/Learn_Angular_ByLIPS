@@ -35,9 +35,16 @@ import { RegistrationComponent } from './registration/registration.component';
 import { EmailvalidationDirective } from './custom/directive/emailvalidation.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
+import { ProfileComponent } from './profile/profile.component';
 //import { HoverDirective } from './custom/directive/hover.directive';
 //import { SalaryPipe } from './custom/salary.pipe';
 
+import {APP_CONFIG,IAppConfig} from './custom';
+
+const Appconfig:IAppConfig={
+  apiEndPoint:environment.apiEndpoint
+};
 
 @NgModule({
   declarations: [
@@ -65,6 +72,10 @@ import { environment } from '../environments/environment';
 
     EmailvalidationDirective,
 
+    ProductDetailsComponent,
+
+    ProfileComponent,
+
    
 
     
@@ -85,6 +96,9 @@ import { environment } from '../environments/environment';
   ],
   // providers: [ProductService],
   providers: [{ provide: ProductService, useClass: ProductService },
+    
+    {provide:APP_CONFIG,useValue:Appconfig}, //Add this service for app_config service.
+
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }], //Add  this intercepter which is made by me [Custominterceptorservive]. 
   bootstrap: [AppComponent]
 })

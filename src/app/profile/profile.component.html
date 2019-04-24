@@ -1,0 +1,45 @@
+<p>
+  profile works!
+</p>
+<h1>
+  Profile Information
+</h1>
+
+<form #profileForm="ngForm" (submit)="updateProfile()" novalidate>
+  <mat-form-field>
+    <input matInput required type="text" [(ngModel)]="profieInfo.firstName" name="firstName" placeholder="First Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput required type="text" [(ngModel)]="profieInfo.lastName" name="lastName" placeholder="Last Name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput readonly type="text" [(ngModel)]="profieInfo.email" name="email" placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput required type="text" [(ngModel)]="profieInfo.mobile" name="mobile" placeholder="Mobile">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="addressInfo.addressLine1" name="addressLine1" placeholder="Address Line1">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="addressInfo.addressLine2" name="addressLine2" placeholder="Address Line2">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="addressInfo.city" name="city" placeholder="City">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="addressInfo.pin" name="pin" placeholder="Pin">
+  </mat-form-field>
+  <div>
+
+    <button [disabled]="profileForm.invalid || !profileForm.dirty" type="submit" mat-raised-button color="primary">Update Profile</button>
+  </div>
+
+</form>

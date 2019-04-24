@@ -19,7 +19,9 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   validateUser() {
-    if (this.loginservice.isLoggedin) {
+    // if (this.loginservice.isLoggedin) {
+    const token = sessionStorage.getItem('userToken');
+    if(token){
       return true;
     } else {
       this.router.navigate(['/login']);

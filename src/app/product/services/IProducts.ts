@@ -3,4 +3,5 @@ export interface IProduct {
     name: string;
     price: number;
     mfd: Date;
+    _id:string;
 }

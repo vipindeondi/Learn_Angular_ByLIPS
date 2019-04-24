@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiEndpoint:'https://jsonplaceholder.typicode.com/'
+  // apiEndpoint:'https://jsonplaceholder.typicode.com/'
+  apiEndpoint:''
 };
 
 /*

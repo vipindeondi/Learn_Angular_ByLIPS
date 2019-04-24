@@ -14,7 +14,7 @@ export class LogincomponentComponent implements OnInit {
 
   user: User = {
     password: '',
-    username: ''
+    email: ''
   };
 
   title: string; // dyanamic data pass.
@@ -33,11 +33,19 @@ export class LogincomponentComponent implements OnInit {
   }
 
   login() {
-    if (this.loginService.login(this.user)) {
-      // redirect to another page login page to home page.
-      // this.routeservice.navigate(['/home']);
-      this.routeservice.navigate(['/employee']);
-    }
+    // if (this.loginService.login(this.user)) {
+    //   // redirect to another page login page to home page.
+    //   // this.routeservice.navigate(['/home']);
+    //   this.routeservice.navigate(['/employee']);
+    // }
+
+    this.loginService.login(this.user).subscribe((result:any)=>{
+      if(result.status === 'success'){
+        this.loginService.isLoggedin = true;
+        sessionStorage.setItem('userToken',result.result);
+        this.routeservice.navigate(['/employee']);
+      }
+    },(error)=> console.log(error));
   }
 
 }

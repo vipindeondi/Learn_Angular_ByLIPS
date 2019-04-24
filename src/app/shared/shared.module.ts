@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule, MatFormFieldModule } from '@angular/material';
 import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SalaryPipe } from '../custom/salary.pipe';
-import { HoverDirective } from '../custom/directive/hover.directive';
+
+import { SalaryPipe, HoverDirective } from '../custom';
+
+// import { HoverDirective } from '../custom/directive/hover.directive';
 import { ListModule } from 'projects/list/src/public_api';
 
 
